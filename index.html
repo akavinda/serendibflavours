@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serendib Flavours | Authentic Sri Lankan Food</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar wrapper">
+      <a href="#" class="logo">Serendib<span>Flavours.</span></a>
+
+      <!-- DESKTOP MENU -->
+      <ul class="navilist">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#restaurant-info">Location</a></li>
+      </ul>
+
+      <div class="desktop-action">
+        <a href="#" class="cart-icon" id="cart-btn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-value">0</span>
+        </a>
+        <button type="button" class="btn sign-in-btn" aria-haspopup="dialog">Sign In</button>
+        <a href="#" class="hamburger" id="hamburger">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <ul class="mobile-menu" id="mobile-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#restaurant-info">Location</a></li>
+        <li>
+          <button type="button" class="btn sign-in-btn" aria-haspopup="dialog">Sign In</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SLIDE-OUT CART SIDEBAR -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-tab" id="cart-tab">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" id="close-cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-list" id="cart-list">
+      <p class="empty-msg">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="total-container">
+        <h4>Total:</h4>
+        <h4 class="cart-total" id="cart-total">0￥</h4>
+      </div>
+      <p id="cart-feedback" role="status"></p>
+      <div class="cart-buttons">
+        <button class="btn close-btn" id="close-cart-btn">Close</button>
+        <button class="btn checkout-btn" id="checkout-btn">Place Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="wrapper hero-grid">
+        <div class="content">
+          <span class="hero-badge"><i class="fa-solid fa-fire"></i> 100% Authentic Taste</span>
+          <h1>Enjoy Your Favourite <span>Food</span></h1>
+          <p class="para">Experience the true taste of Sri Lankan food with our authentic, aromatic dishes made from the
+            finest local ingredients.</p>
+          <div class="hero-btns">
+            <a href="#menu" class="btn">Order Now</a>
+            <div class="social-links">
+              <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="images/delivery-boy.png" alt="Delivery Boy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+      <div class="wrapper">
+        <div class="text-center">
+          <h5>Our Services</h5>
+          <h2>How Does It Work?</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="images-container">
+              <img src="images/easy-to-order.png" alt="Easy to Order">
+            </div>
+            <h3>Easy to Order</h3>
+            <p>Order your favorite dishes smoothly with just a few simple clicks.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="images-container">
+              <img src="images/fast-delivery.png" alt="Fast Delivery">
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Get your food delivered fresh and hot right to your doorstep.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="images-container">
+              <img src="images/best-quality.png" alt="Best Quality">
+            </div>
+            <h3>Best Quality</h3>
+            <p>We use premium, hand-picked ingredients to craft delicious meals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Food Menu Section -->
+    <section id="menu" class="section-padding bg-light">
+      <div class="wrapper">
+        <div class="text-center">
+          <h5>Our Menu</h5>
+          <h2>Popular Dishes</h2>
+        </div>
+
+        <div class="menu-tools">
+          <label for="menu-search">Search dishes</label>
+          <input type="search" id="menu-search" placeholder="Try chicken or pizza">
+          <label for="menu-sort">Sort by</label>
+          <select id="menu-sort"><option value="original">Menu order</option><option value="asc">Price: Low to High</option><option value="desc">Price: High to Low</option></select>
+          <label><input id="favorites-only" type="checkbox"> Favorites only</label>
+          <div class="menu-filters" role="group" aria-label="Dish categories">
+            <button type="button" data-category="all" aria-pressed="true">All</button>
+            <button type="button" data-category="sri-lankan" aria-pressed="false">Sri Lankan</button>
+            <button type="button" data-category="burgers" aria-pressed="false">Burgers</button>
+            <button type="button" data-category="pizza" aria-pressed="false">Pizza</button>
+            <button type="button" data-category="mains" aria-pressed="false">Mains</button>
+            <button type="button" data-category="snacks" aria-pressed="false">Snacks</button>
+          </div>
+        </div>
+        <p id="menu-empty" role="status" hidden>No dishes match. Try another search or category.</p>
+        <div class="card-list">
+          <div class="order-card sri-lankan-dish" data-menu-category="sri-lankan">
+            <div class="card-image">
+              <img src="images/curryrice.jpg" alt="Sri Lankan Rice &amp; Curry" loading="lazy">
+            </div>
+            <h4>Sri Lankan Rice &amp; Curry</h4>
+            <p class="dish-description">Steamed rice with a selection of Sri Lankan curries.</p>
+            <span class="price">¥1,450</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="rice-and-curry">Add To Cart</button>
+          </div>
+          <div class="order-card sri-lankan-dish" data-menu-category="sri-lankan">
+            <div class="card-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Kottu_Roti.jpg" alt="Kottu Roti" loading="lazy">
+            </div>
+            <h4>Kottu Roti</h4>
+            <p class="dish-description">Chopped roti stir-fried with vegetables and spices.</p>
+            <span class="price">¥1,350</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="kottu-roti">Add To Cart</button>
+            
+          </div>
+          <div class="order-card sri-lankan-dish" data-menu-category="sri-lankan">
+            <div class="card-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Sri_Lanka-Egg_hoppers.jpg" alt="Egg Hoppers" loading="lazy">
+            </div>
+            <h4>Egg Hoppers</h4>
+            <p class="dish-description">Crisp bowl-shaped hoppers with an egg in the center.</p>
+            <span class="price">¥780</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="egg-hoppers">Add To Cart</button>
+            
+          </div>
+          <div class="order-card sri-lankan-dish" data-menu-category="sri-lankan">
+            <div class="card-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/String_hoppers_with_curries_and_sambol%2C_Sri_Lanka._%288316102519%29.jpg" alt="String Hoppers &amp; Curry" loading="lazy">
+            </div>
+            <h4>String Hoppers &amp; Curry</h4>
+            <p class="dish-description">Steamed rice noodles served with curries and sambol.</p>
+            <span class="price">¥1,100</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="string-hoppers">Add To Cart</button>
+            
+          </div>
+          <div class="order-card" data-menu-category="burgers">
+            <div class="card-image">
+              <img src="images/burger.png" alt="Double Beef Burger">
+            </div>
+            <h4>Double Beef Burger</h4>
+            <span class="price">1200￥</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="double-beef-burger">Add To Cart</button>
+          </div>
+
+          <div class="order-card" data-menu-category="pizza">
+            <div class="card-image">
+              <img src="images/pizza.png" alt="Chicken Pizza">
+            </div>
+            <h4>Chicken Pizza</h4>
+            <span class="price">2400￥</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="chicken-pizza">Add To Cart</button>
+          </div>
+
+          <div class="order-card" data-menu-category="mains">
+            <div class="card-image">
+              <img src="images/fried-chicken.png" alt="Crispy Chicken">
+            </div>
+            <h4>Crispy Chicken</h4>
+            <span class="price">1500￥</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="crispy-chicken">Add To Cart</button>
+          </div>
+
+          <div class="order-card" data-menu-category="snacks">
+            <div class="card-image">
+              <img src="images/sandwich.png" alt="Club Sandwich">
+            </div>
+            <h4>Club Sandwich</h4>
+            <span class="price">950￥</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="club-sandwich">Add To Cart</button>
+          </div>
+
+          <div class="order-card" data-menu-category="mains">
+            <div class="card-image">
+              <img src="images/lasagna.png" alt="Lasagna">
+            </div>
+            <h4>Lasagna</h4>
+            <span class="price">650￥</span>
+           <button type="button" class="btn add-to-cart-btn" data-product-id="lasagna">Add To Cart</button>
+          </div>
+
+          <div class="order-card" data-menu-category="snacks">
+            <div class="card-image">
+              <img src="images/spring-roll.png" alt="Spring Rolls">
+            </div>
+            <h4>Spring Rolls</h4>
+            <span class="price">880￥</span>
+           <button type="button" class="btn add-to-cart-btn" data-product-id="spring-rolls">Add To Cart</button>
+          </div>
+
+          <div class="order-card" data-menu-category="snacks">
+            <div class="card-image">
+              <img src="images/chicken-roll.png" alt="Chicken Roll">
+            </div>
+            <h4>Chicken Roll</h4>
+            <span class="price">970￥</span>
+            <button type="button" class="btn add-to-cart-btn" data-product-id="chicken-roll">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section-padding">
+      <div class="wrapper reviews-grid">
+        <div class="image-container">
+          <img src="images/delivery-boy-with-phone.png" alt="Delivery Boy with Phone">
+        </div>
+
+        <div class="content">
+          <h5>Our Reviews</h5>
+          <h2>What They Say?</h2>
+
+          <div class="review-container">
+            <div class="swiper mySwiper" aria-label="Customer reviews">
+              <div class="swiper-wrapper" aria-live="polite">
+                <div class="swiper-slide">
+                  <div class="profile-row">
+                    <div class="profile">
+                      <img src="images/profile1.jpeg" alt="Alex">
+                    </div>
+                    <div>
+                      <h4>Alex</h4>
+                      <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="para">SerendibFlavours is the best! Besides many delicious meals, the service is great,
+                    especially the lightning-fast delivery.</p>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="profile-row">
+                    <div class="profile">
+                      <img src="images/profile2.jpeg" alt="Felisha">
+                    </div>
+                    <div>
+                      <h4>Felisha</h4>
+                      <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="para">Delicious food, cozy ambiance, and exceptional service. A must-visit for food lovers
+                    seeking bold flavors!</p>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="profile-row">
+                    <div class="profile">
+                      <img src="images/profile3.jpeg" alt="Olivia">
+                    </div>
+                    <div>
+                      <h4>Olivia</h4>
+                      <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="para">The best 10/10 service I ever had in a restaurant. Highly recommended for quality food
+                    lovers!</p>
+                </div>
+              </div>
+
+              <div class="swiper-nav-buttons">
+                <button type="button" class="arrow" id="prev" aria-label="Previous review">←</button>
+                <button type="button" class="arrow" id="next" aria-label="Next review">→</button>
+                <span id="review-position"></span>
+                <div id="review-dots" aria-label="Choose review"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrapper">
+      <form id="review-form" class="menu-tools">
+        <h3>Write a review</h3>
+        <label for="review-name">Name</label><input id="review-name" required maxlength="30">
+        <label for="review-rating">Rating</label>
+        <select id="review-rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+        <label for="review-text">Review</label><textarea id="review-text" required maxlength="350"></textarea>
+        <button class="btn">Post Review</button>
+        <p id="review-status" role="status"></p>
+      </form>
+    </div>
+    <section id="restaurant-info" class="wrapper section-padding">
+      <h2>About Serendib Flavours</h2>
+      <p>Explore Sri Lankan favorites such as rice and curry, kottu roti and hoppers alongside international dishes.</p>
+      <div class="location-card">
+        <h3>Malabe, Sri Lanka</h3>
+        <p><strong>Location:</strong> New Kandy Road, near SLIIT Malabe Campus.</p>
+        <p><strong>Opening hours:</strong> Daily, 11:00 AM–9:00 PM (Sri Lanka time).</p>
+        <p><strong>Contact:</strong> Phone and email are currently unavailable.</p>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=SLIIT+Malabe+Campus%2C+New+Kandy+Road%2C+Malabe%2C+Sri+Lanka" target="_blank" rel="noopener">Get Directions to Landmark</a>
+      </div>
+    </section>
+    <!-- App Section -->
+    <section class="section-padding">
+      <div class="wrapper">
+        <div class="app-container">
+          <div class="image-container">
+            <img src="images/mobile-app.png" alt="Mobile App">
+          </div>
+          <div class="content">
+            <h5>Our App</h5>
+            <h2>Simple way to<br> order your food!</h2>
+            <p class="para">Discover food wherever & whenever and get your food delivery quickly through our official
+              app.</p>
+            <a href="#" class="btn">Get the App</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section-padding">
+      <div class="wrapper text-center">
+        <h5>Subscribe</h5>
+        <h2>Subscribe To Our Newsletter</h2>
+        <p class="para m-auto">Subscribe to our newsletter and get the latest updates on our exclusive menu items,
+          promotions, and food events.</p>
+
+        <form class="input-container">
+          <input type="email" placeholder="Enter your email address" autocomplete="off" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-container">
+    <div class="wrapper">
+      <div class="footer-content">
+        <div class="footer-col brand-col">
+          <a href="#" class="logo">Serendib<span>Flavours.</span></a>
+          <p class="footer-desc">Delivering mouth-watering authentic Sri Lankan and international dishes straight to
+            your doorstep with love.</p>
+          <div class="social-links mt-half">
+            <a href="#" class="social-icon footer-social"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon footer-social"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-icon footer-social"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Menu</h4>
+          <ul class="footer-links">
+            <li><a href="#menu">Specials</a></li>
+            <li><a href="#menu">Popular Dishes</a></li>
+            <li><a href="#menu">Categories</a></li>
+            <li><a href="#menu">Beverages</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#restaurant-info">Why Serendib?</a></li>
+            <li><a href="#">Partner With Us</a></li>
+            <li><a href="#reviews">Customer Reviews</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Account Info</a></li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#restaurant-info">Restaurant Info</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 SerendibFlavours. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="btn" id="mobile-cart" hidden></button>
+  <button type="button" class="btn" id="order-history">Order History</button>
+  <label for="menu-language">Language</label>
+  <select id="menu-language"><option value="en">English</option><option value="ja">日本語</option></select>
+
+  <dialog class="feature-dialog" id="dish-details" aria-labelledby="dish-title">
+    <img id="dish-photo" alt="">
+    <h2 id="dish-title"></h2><p id="dish-description"></p><p id="dish-price"></p>
+    <form id="dish-form" class="extra-fields">
+      <label for="dish-quantity">Quantity</label><input id="dish-quantity" type="number" min="1" max="99" value="1" required>
+      <div class="demo-account-actions">
+        <button type="button" class="btn" id="dish-close">Close</button>
+        <button class="btn">Add To Cart</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="feature-dialog" id="receipts" aria-labelledby="receipt-title">
+    <h2 id="receipt-title">Order History</h2><div id="receipt-body"></div>
+    <form method="dialog"><button class="btn">Close</button></form>
+  </dialog>
+  <dialog id="demo-checkout" aria-labelledby="demo-checkout-title">
+    <h2 id="demo-checkout-title">Review your order</h2>
+    <p>No payment will be taken. Orders are saved in this browser only.</p>
+    <ul id="checkout-items"></ul>
+    <div class="extra-fields">
+      <label for="fulfillment">Order type</label>
+      <select id="fulfillment"><option value="pickup">Pickup</option><option value="delivery">Delivery</option></select>
+      <div id="pickup-options">
+        <label for="pickup-time">Pickup time (Sri Lanka time)</label>
+        <select id="pickup-time">
+          <option value="">As soon as possible</option>
+        </select>
+      </div>
+      <label for="order-note">Order instructions (optional)</label>
+      <textarea id="order-note" maxlength="200"></textarea>
+    </div>
+    <p class="checkout-total">Total <strong id="checkout-total"></strong></p>
+    <form method="dialog" class="demo-account-actions">
+      <button class="btn" value="cancel" autofocus>Cancel</button>
+      <button class="btn" value="confirm">Confirm Order</button>
+    </form>
+  </dialog>
+
+  <dialog id="demo-account" aria-labelledby="demo-account-title">
+    <form id="demo-account-form">
+      <h2 id="demo-account-title">Sign In</h2>
+      <p id="demo-account-message">Enter your display name.</p>
+      <label id="demo-name-label" for="demo-name">Your name</label>
+      <input id="demo-name" maxlength="30" required autofocus>
+      <div class="demo-account-actions">
+        <button type="button" class="btn" id="demo-account-close">Cancel</button>
+        <button type="submit" class="btn" id="demo-account-submit">Continue</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+
+</html>
